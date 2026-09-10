@@ -72,7 +72,7 @@ The ORDER_ID must be replaced dynamically with the actual order ID. Keep the mer
 
 
 flutter run -d chrome \
-  --dart-define=PAYHERE_BROWSER_CHECKOUT_URL=https://www.tasran.com/payhere.html
+  --dart-define=PAYHERE_BROWSER_CHECKOUT_URL=https://tasran.com/payhere.html
 
   flutter build apk --release \
-  --dart-define=PAYHERE_BROWSER_CHECKOUT_URL=https://www.tasran.com/payhere.html
+  --dart-define=PAYHERE_BROWSER_CHECKOUT_URL=https://tasran.com/payhere.html
