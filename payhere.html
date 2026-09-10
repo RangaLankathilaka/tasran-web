@@ -141,7 +141,9 @@
                     console.error('PayHere error:', error);
                 };
 
-                fetch(API_URL + '?order_id=' + encodeURIComponent(orderId), {
+                fetch(API_URL
+                    + '?order_id=' + encodeURIComponent(orderId)
+                    + '&platform=web', {
                     method: 'GET',
                     headers: { 'Accept': 'application/json' },
                     credentials: 'omit',
