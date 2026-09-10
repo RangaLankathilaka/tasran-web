@@ -115,7 +115,7 @@
                     throw new Error('PayHere SDK did not load');
                 }
 
-                payment.notify_url = NOTIFY_URL;
+                payment.notify_url = payment.notify_url || NOTIFY_URL;
                 showStatus('Opening PayHere...', '');
                 window.payhere.startPayment(payment);
             }
@@ -166,6 +166,18 @@
                         if (!payment.hash || !payment.merchant_id || !payment.amount || !payment.currency) {
                             throw new Error('Payment response is incomplete');
                         }
+
+                        payment.sandbox = params.get('sandbox') === 'true';
+                        payment.first_name = params.get('first_name') || '';
+                        payment.last_name = params.get('last_name') || '';
+                        payment.email = params.get('email') || '';
+                        payment.phone = params.get('phone') || '';
+                        payment.address = params.get('address') || '';
+                        payment.city = params.get('city') || '';
+                        payment.country = params.get('country') || '';
+                        payment.notify_url = params.get('notify_url') || NOTIFY_URL;
+                        payment.custom_1 = params.get('custom_1') || '';
+                        payment.custom_2 = params.get('custom_2') || '';
 
                         startPayment(payment);
                     })
