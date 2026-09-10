@@ -180,6 +180,8 @@
                         payment.notify_url = params.get('notify_url') || NOTIFY_URL;
                         payment.custom_1 = params.get('custom_1') || '';
                         payment.custom_2 = params.get('custom_2') || '';
+                        payment.return_url = params.get('return_url') || 'https://tasran.com/tutormate';
+                        payment.cancel_url = params.get('cancel_url') || 'https://tasran.com/tutormate';
 
                         startPayment(payment);
                     })
